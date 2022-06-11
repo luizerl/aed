@@ -1,58 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
-
-*{
-    padding: 0;
-    margin: 0;
-}
-
-:root{
-    --dark-blue: #1f3f72;
-    --light-blue: #2359af;
-    --dark-grey: #111;
-    --light-grey: #f3f3f3;
-    --tangerine: #FB8500;
-}
-
-html{
-    font-size: 62.5%;
-    font-family: 'Open Sans', sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-    font-family: 'Raleway', sans-serif;
-}
-
-
-h1{
-    font-size: 4.2rem;
-}
-
-h2{
-    font-size: 3.6rem;
-}
-
-h3{
-    font-size: 2.8rem;
-}
-
-p,
-a,
-blockquote{
-    font-size: 1.8rem;
-}
-
-a{
-    text-decoration: none;
-}
 
 
 /* MAIN */
+
 
 main{
     display: grid;
@@ -66,8 +15,10 @@ main{
 main .info{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    
+    /* justify-content: center; */
     gap: 1.5rem;
+    margin-top: 8rem;
     padding: 2rem;
 }
 
