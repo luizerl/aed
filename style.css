@@ -6,16 +6,17 @@
 main{
     display: grid;
     grid-template-columns: 1fr 2fr;
-    height: 100vh;
-    gap: 2rem;
+    grid-template-areas: "conteudo imagem"
+                         "conteudo quote";
     background-color: var(--dark-grey);
     color: white;
+    align-items: flex-start;
 }
 
 main .info{
     display: flex;
     flex-direction: column;
-    
+    grid-area: conteudo;
     /* justify-content: center; */
     gap: 1.5rem;
     margin-top: 8rem;
@@ -23,21 +24,25 @@ main .info{
 }
 
 main .quote{
-    display: flex;
-    flex-direction: column;  
     overflow: hidden;  
     background-color: var(--tangerine);
-
+    grid-area: quote;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-main .quote .img{
-    max-height: 85vh;
+main  .img{
+    display: flex;
+    justify-content: center;
+    grid-area: imagem;
+    max-height: 75vh;
     overflow: hidden;
 }
 
-main .quote .img img{
-    max-width: 100%;
-    object-fit: fill;
+main  .img img{
+    object-fit: cover;
+    max-height: 50%;
 }
 
 main .quote blockquote{
@@ -108,8 +113,9 @@ main .info .button:hover{
 
 #modulos .container{
     padding: 4rem 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(200px,300px));
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     gap: 2rem;
     justify-content: space-between;
     background-color: var(--light-grey);
@@ -117,19 +123,47 @@ main .info .button:hover{
 
 #modulos .container .modulo{
     color: var(--dark-grey);
-    height: 200px;
+    min-height: 200px;
+    flex-basis: 200px;
+    flex-grow: 1;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
     border: 2px solid var(--dark-blue);
+    position: relative;
 
+}
+
+#modulos .container .modulo i {
+    display: none;
+    font-size:5rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: var(--dark-grey);
+    opacity: 0.3;
+    z-index: 0;
+}
+#modulos .container .modulo:hover:not(.modulo-hover) i {
+    display: block;
+}
+
+#modulos .container .modulo > *:not(i){
+    z-index: 1;
 }
 
 #modulos .container .modulo:hover{
     background-color: var(--dark-blue);
     color: white;
+}
+
+#modulos .modulo-hover{
+    background-color: var(--dark-blue);
+    color: white !important;
+    grid-column: span 2;
+    
 }
 
 #modulos .modulo h3{
@@ -146,17 +180,22 @@ footer{
 }
 
 footer a{
-    color: var(--tangerine);
+    color: var(--dark-blue);
 }
 
 
-@media screen and (min-width: 320px) and (max-width: 760px){
-    main, #modulos, #modulos .container{
+@media screen and (min-width: 200px) and (max-width: 760px){
+    #modulos, #modulos .container{
         grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
     }
 
     main{
         height: auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: "conteudo"
+                             "imagem"
+                             "quote";
     }
 
         

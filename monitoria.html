@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/monitoria.css">
     <link rel="stylesheet" href="./css/reset.css">
     <script src="https://kit.fontawesome.com/05efc4f42a.js" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monitoria - AED</title>
 </head>
 <body>
@@ -18,11 +18,12 @@
                     <ul>
                         <li><a href="./index.html">Home</a></li>
                         <li><a href="./monitoria.html">Monitoria</a></li>
+                        <li><a href="./sobre.html">Sobre</a></li>
                     </ul>
                 </nav>
                 <h1>Dias e Horários da Monitoria</h1>
                 <p>Ao lado os horários e locais onde ocorrerá as monitorias, remotas e presencias. Caso não consiga participar de uma determinada sessão, entre em contato com outro monitor e verifique se há como participar da reunião dele.</p>
-                <p>Quando a monitoria estiver ocorrendo, o boxe do respectivo monitor ficará <span>verde</span>.</p>
+                
             </div>
         </div>
 
@@ -31,7 +32,9 @@
             </div>
             <div class="box-container">
                 <div class="box" data-horario='{"sessoes":[[[4],[14,16]]]}'>
+                    <p class="monitoria-p-off"><i class="fa-solid fa-circle-info"></i> A monitoria já começou! Está esperando o quê?</p>
                     <h3>Luiz Eduardo</h3>
+
                     <div class="box-info">
                         <p>Monitor</p>
                         <p>Presencial</p>
@@ -44,6 +47,8 @@
                 </div>
     
                 <div class="box" data-horario='{"sessoes":[[[2,4],[18,21]]] }'>
+                    <p class="monitoria-p-off"><i class="fa-solid fa-circle-info"></i> A monitoria já começou! Está esperando o quê?</p>
+
                     <h3>Vinícius Baião</h3>
                     <div class="box-info">
                         <p>Monitor</p>
@@ -57,6 +62,8 @@
                 </div>
     
                 <div class="box" data-horario='{"sessoes":[[[2,4],[18,21]],[[5],[13,16]],[[6,0],[9,20]]]}'>
+                    <p class="monitoria-p-off"><i class="fa-solid fa-circle-info"></i> A monitoria já começou! Está esperando o quê?</p>
+
                     <h3>Vinícius Giovani</h3>
                     <div class="box-info">
                         <p>Monitor</p>
@@ -81,23 +88,33 @@
     <script>
         (function(){
             const dataHorario = document.querySelectorAll('.box');
+            
 
             dataHorario.forEach(item =>{
+                const alerta = item.querySelector('.monitoria-p-off');
                 let horarios = JSON.parse(item.attributes['data-horario'].value);
                 const [sessao] = [horarios.sessoes]
                 const data = new Date();
                 const dataDia = data.getDay();
                 const dataHora = data.getHours();
                 
+                
                 sessao.forEach(itm => {
                     if(itm[0].indexOf(dataDia) != -1){
                         if(dataHora >= itm[1][0] && dataHora < itm[1][1]){
                             item.classList.add('monitoria-on')
+                            alerta.classList.add('monitoria-p-on')
+                        }
+                        else{
+                            item.classList.remove('monitoria-on')
+                            alerta.classList.remove('monitoria-p-on')
                         }
                     }
                 })
                 
-            })
+            });
+
+   
         })();
     </script>
 </body>

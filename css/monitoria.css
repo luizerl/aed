@@ -85,6 +85,10 @@ main{
     justify-content: center;
     flex-direction: column;
     display: flex;
+    margin: 1rem 0;
+
+    position: relative;
+
 }
 
 .box h3{
@@ -98,6 +102,7 @@ main{
     flex-wrap: wrap;
     gap: .5rem;
     margin: .5rem 0 1.5rem 0;
+    
 }
 
 .box .box-info p{
@@ -148,8 +153,49 @@ hr{
     border: 1px solid var(--dark-green);
 }
 
+.monitoria-p-off{
+    display: none;
+    background-color: var(--dark-green);
+    border-radius: .5rem;
+    padding: 1rem;
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.monitoria-p-off i{
+    color: #4ede5a;
+}
+
+.monitoria-p-on{
+    display: block;
+}
 
 .box li i{
     color: var(--dark-blue);
     margin-right: 1rem;
+}
+
+@media screen and (min-width: 300px) and (max-width: 760px) {
+    main{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    main .container,
+    main .img,
+    main .box-container{
+        grid-row: auto;
+        grid-column: auto;
+    }
+    
+}
+
+@media screen and (max-width: 1024px) {
+    .img{
+        display: none;
+    }
+
+    .box-container{
+        grid-row: 1/3;
+    }
 }
