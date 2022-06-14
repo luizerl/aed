@@ -1,6 +1,10 @@
 backend:
-  name: git-gateway
-  branch: main
+  
+  
+  name: github 
+  repo: aed/luizerl.github.io 
+  branch: master 
+  site_domain: monitoria-aed.netlify.app
   publish_mode: editorial_workflow
 
 media_foder: "public/assets/img"
