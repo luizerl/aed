@@ -84,3 +84,16 @@ header{
     color: white;
     align-items: center;
 }
+
+
+footer{
+    width: 100%;
+    background-color: var(--light-grey);
+    color: var(--dark-grey);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer a{
+    color: var(--dark-blue);
+}

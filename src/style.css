@@ -171,17 +171,6 @@ main .info .button:hover{
     text-decoration-color: var(--light-blue);
 }
 
-footer{
-    width: 100%;
-    background-color: var(--light-grey);
-    color: var(--dark-grey);
-    text-align: center;
-    padding: 2rem 0;
-}
-
-footer a{
-    color: var(--dark-blue);
-}
 
 
 @media screen and (min-width: 200px) and (max-width: 760px){
