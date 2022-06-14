@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main
+  publish_mode: editorial_workflow
+
+media_foder: "public/assets/img"
+public_folder: "/assets/img"
+
+collections
+  - name: "listas"
+    label: "Resoluções de Listas"
+    folder: "src/listas"
+    create: true
+    slug: "{{slug}}"
+    fields: 
+      - { label: "Title", name: "title", widget: "string"}
+      - { label: "Description", name: "description", widget: "string"}
+      - { label: "Author", name: "author", widget: "string"}
+      - { label: "Date", name: "date", widget: "datetime"}
+      - { label: "Tags", name: "tags", widget: "list", default: "listas"}
+      - { label: "Title", name: "title", widget: "string"}
+      - { label: "Body", name: "body", widget: "markdown"}
