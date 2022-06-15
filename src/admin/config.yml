@@ -3,8 +3,6 @@ backend:
   branch: main 
   publish_mode: editorial_workflow
 
-media_foder: "public/assets/img"
-public_folder: "/assets/img"
 
 collections
   - name: "listas"
