@@ -1,6 +1,6 @@
 backend:
+  name: github 
   branch: main 
-  site_domain: monitoria-aed.netlify.app
   publish_mode: editorial_workflow
 
 media_foder: "public/assets/img"
