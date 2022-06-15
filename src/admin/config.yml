@@ -1,8 +1,5 @@
 backend:
-  
-  
   name: github 
-  repo: aed/luizerl.github.io 
   branch: main 
   site_domain: monitoria-aed.netlify.app
   publish_mode: editorial_workflow
