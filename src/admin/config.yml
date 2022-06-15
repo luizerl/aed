@@ -12,7 +12,6 @@ collections
     label: "Resoluções de Listas"
     folder: "src/listas"
     create: true
-    slug: "{{slug}}"
     fields: 
       - { label: "Title", name: "title", widget: "string"}
       - { label: "Description", name: "description", widget: "string"}
